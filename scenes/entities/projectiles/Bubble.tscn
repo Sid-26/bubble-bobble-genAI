@@ -1,0 +1,131 @@
+[gd_scene load_steps=27 format=3 uid="uid://byur2xp5lpwju"]
+
+[ext_resource type="Script" uid="uid://c707yf3l8vjgn" path="res://scenes/entities/projectiles/bubble.gd" id="1_esxm3"]
+[ext_resource type="Texture2D" uid="uid://drtkugokmvbf4" path="res://assets/sprites/bubble/blow/orb0.png" id="2_5dsks"]
+[ext_resource type="PackedScene" uid="uid://dpafvx8iaqtel" path="res://scenes/entities/pickups/Fruit.tscn" id="2_jeqmj"]
+[ext_resource type="Texture2D" uid="uid://cnj1u06qvj8ta" path="res://assets/sprites/bubble/blow/orb1.png" id="3_kmj3b"]
+[ext_resource type="Texture2D" uid="uid://ukpqi4t8xguu" path="res://assets/sprites/bubble/blow/orb2.png" id="4_r0u3b"]
+[ext_resource type="Texture2D" uid="uid://b1mm30d322cg" path="res://assets/sprites/bubble/blow/orb3.png" id="5_bkpku"]
+[ext_resource type="Texture2D" uid="uid://cpvaj54husceb" path="res://assets/sprites/bubble/blow/orb4.png" id="6_t36b8"]
+[ext_resource type="Texture2D" uid="uid://cn3ivdr2b3fry" path="res://assets/sprites/bubble/blow/orb5.png" id="7_p7xaw"]
+[ext_resource type="Texture2D" uid="uid://t3h4lkvanr5b" path="res://assets/sprites/bubble/blow/orb6.png" id="8_sycnk"]
+[ext_resource type="Texture2D" uid="uid://cgmee3pbkxmt5" path="res://assets/sprites/bubble/pop/pop10.png" id="9_wikyt"]
+[ext_resource type="Texture2D" uid="uid://d1fa2bfajeo3b" path="res://assets/sprites/bubble/pop/pop11.png" id="10_jeqmj"]
+[ext_resource type="Texture2D" uid="uid://bhpg7qsjkhu5y" path="res://assets/sprites/bubble/pop/pop12.png" id="11_4cj2u"]
+[ext_resource type="Texture2D" uid="uid://beoa2s67sh8nx" path="res://assets/sprites/bubble/pop/pop13.png" id="12_txblb"]
+[ext_resource type="Texture2D" uid="uid://tnc3xt3pklbm" path="res://assets/sprites/bubble/pop/pop14.png" id="13_e56hp"]
+[ext_resource type="Texture2D" uid="uid://dpadxpdh20dtg" path="res://assets/sprites/bubble/pop/pop15.png" id="14_cdopr"]
+[ext_resource type="Texture2D" uid="uid://gbwhi2didbqi" path="res://assets/sprites/bubble/pop/pop16.png" id="15_4450o"]
+[ext_resource type="Texture2D" uid="uid://3cqesockx0js" path="res://assets/sprites/bubble/trapped/trap00.png" id="16_uhtl0"]
+[ext_resource type="Texture2D" uid="uid://cohqjcmmpc5lm" path="res://assets/sprites/bubble/trapped/trap01.png" id="17_61qq0"]
+[ext_resource type="Texture2D" uid="uid://cgrnacheolne" path="res://assets/sprites/bubble/trapped/trap02.png" id="18_dso0c"]
+[ext_resource type="Texture2D" uid="uid://bchxstruvp063" path="res://assets/sprites/bubble/trapped/trap03.png" id="19_i56d1"]
+[ext_resource type="Texture2D" uid="uid://b8hr38xoumwxn" path="res://assets/sprites/bubble/trapped/trap04.png" id="20_6vmsi"]
+[ext_resource type="Texture2D" uid="uid://q4hp2tvsibke" path="res://assets/sprites/bubble/trapped/trap05.png" id="21_jf3r5"]
+[ext_resource type="Texture2D" uid="uid://0fa4d658t7um" path="res://assets/sprites/bubble/trapped/trap06.png" id="22_3bihc"]
+[ext_resource type="Texture2D" uid="uid://dtb71vmun5rsk" path="res://assets/sprites/bubble/trapped/trap07.png" id="23_uibab"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gnb1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_esxm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5dsks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kmj3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r0u3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bkpku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t36b8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p7xaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sycnk")
+}],
+"loop": false,
+"name": &"blow",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_wikyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jeqmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4cj2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_txblb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e56hp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cdopr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4450o")
+}],
+"loop": false,
+"name": &"pop",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_uhtl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_61qq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dso0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i56d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_6vmsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jf3r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3bihc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uibab")
+}],
+"loop": true,
+"name": &"trapped",
+"speed": 5.0
+}]
+
+[node name="Bubble" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_esxm3")
+fruit_scene = ExtResource("2_jeqmj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6gnb1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_esxm3")
+animation = &"pop"
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

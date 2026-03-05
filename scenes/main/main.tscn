@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb3ci2pchabfd"]
+
+[ext_resource type="PackedScene" uid="uid://c15u3a5u0tc6" path="res://scenes/world/Level01.tscn" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://gd8ueta6ulsg" path="res://scenes/entities/player/Player.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://byur2xp5lpwju" path="res://scenes/entities/projectiles/Bubble.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://b7qe7rctmx4lq" path="res://scenes/world/Spawner.tscn" id="4_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://13b3bsjwqxyv" path="res://scenes/entities/enemies/robot.tscn" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://bxjem1376ffh6" path="res://scenes/world/HUD.tscn" id="6_ow5a4"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Level01" parent="." instance=ExtResource("1_hyk8p")]
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_iuonh")]
+position = Vector2(250, 120)
+bubble_scene = ExtResource("3_k2fmo")
+
+[node name="LeftSpawner" parent="." instance=ExtResource("4_l3cfh")]
+position = Vector2(200, -10)
+enemy_scene = ExtResource("5_6q06x")
+max_enemies = 3
+spawn_rate = 3.0
+
+[node name="RightSpawner" parent="." instance=ExtResource("4_l3cfh")]
+position = Vector2(1000, -10)
+enemy_scene = ExtResource("5_6q06x")
+max_enemies = 3
+spawn_rate = 4.0
+spawn_direction = -1
+
+[node name="Hud" parent="." instance=ExtResource("6_ow5a4")]
