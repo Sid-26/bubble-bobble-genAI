@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://byur2xp5lpwju"]
+[gd_scene load_steps=29 format=3 uid="uid://byur2xp5lpwju"]
 
 [ext_resource type="Script" uid="uid://c707yf3l8vjgn" path="res://scenes/entities/projectiles/bubble.gd" id="1_esxm3"]
 [ext_resource type="Texture2D" uid="uid://drtkugokmvbf4" path="res://assets/sprites/bubble/blow/orb0.png" id="2_5dsks"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://q4hp2tvsibke" path="res://assets/sprites/bubble/trapped/trap05.png" id="21_jf3r5"]
 [ext_resource type="Texture2D" uid="uid://0fa4d658t7um" path="res://assets/sprites/bubble/trapped/trap06.png" id="22_3bihc"]
 [ext_resource type="Texture2D" uid="uid://dtb71vmun5rsk" path="res://assets/sprites/bubble/trapped/trap07.png" id="23_uibab"]
+[ext_resource type="AudioStream" uid="uid://bgpgsj6rishlx" path="res://assets_ai/processed/sfx/popping.wav" id="25_txblb"]
+[ext_resource type="AudioStream" uid="uid://qygjwsn6qkr5" path="res://assets_ai/processed/sfx/blowing.wav" id="26_e56hp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6gnb1"]
 
@@ -126,6 +128,12 @@ animation = &"pop"
 
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 4.0
+
+[node name="PopSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_txblb")
+
+[node name="BlowSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_e56hp")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

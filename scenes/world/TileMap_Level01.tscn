@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b48vdmqxwiqhi"]
 
-[ext_resource type="TileSet" uid="uid://raqlrl8mwhv8" path="res://resources/TileMap_Level01.tres" id="1_s0m6i"]
+[ext_resource type="TileSet" uid="uid://bh4lls7lf5nqf" path="res://resources/TileMap_Level01_ai_gen.tres" id="1_s0m6i"]
 
 [node name="TileMapLayer" type="TileMapLayer"]
 tile_set = ExtResource("1_s0m6i")

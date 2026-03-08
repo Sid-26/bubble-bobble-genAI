@@ -1,16 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://13b3bsjwqxyv"]
+[gd_scene load_steps=12 format=3 uid="uid://13b3bsjwqxyv"]
 
 [ext_resource type="Script" uid="uid://3whqpehsmoov" path="res://scenes/entities/enemies/robot.gd" id="1_jj76u"]
-[ext_resource type="Texture2D" uid="uid://sccw106u7ioc" path="res://assets/sprites/robot/left/robot000.png" id="2_57ysn"]
-[ext_resource type="Texture2D" uid="uid://b2v44qsx0qyeu" path="res://assets/sprites/robot/right/robot010.png" id="3_xvhu5"]
-[ext_resource type="Texture2D" uid="uid://ddx3hg5lea54f" path="res://assets/sprites/robot/left/robot001.png" id="4_o0m1m"]
-[ext_resource type="Texture2D" uid="uid://jh6aoppxp65i" path="res://assets/sprites/robot/left/robot002.png" id="5_6ehx0"]
-[ext_resource type="Texture2D" uid="uid://8ivydp1uqsh" path="res://assets/sprites/robot/left/robot003.png" id="6_3bsfd"]
-[ext_resource type="Texture2D" uid="uid://bc10l1ij7lpap" path="res://assets/sprites/robot/left/robot004.png" id="7_g6fir"]
-[ext_resource type="Texture2D" uid="uid://b0bxplugxsbq5" path="res://assets/sprites/robot/right/robot011.png" id="8_qetxb"]
-[ext_resource type="Texture2D" uid="uid://cdrseqp2avav" path="res://assets/sprites/robot/right/robot012.png" id="9_wgxg6"]
-[ext_resource type="Texture2D" uid="uid://tjjm53hswjuy" path="res://assets/sprites/robot/right/robot013.png" id="10_2eva8"]
-[ext_resource type="Texture2D" uid="uid://cf4y6kwgu2e6p" path="res://assets/sprites/robot/right/robot014.png" id="11_mm433"]
+[ext_resource type="Texture2D" uid="uid://dimfix40ktcm" path="res://assets_ai/processed/sprites/robot/robot0.png" id="2_v5go6"]
+[ext_resource type="Texture2D" uid="uid://cquky2rbv8knt" path="res://assets_ai/processed/sprites/robot/robot1.png" id="3_j4giv"]
+[ext_resource type="Texture2D" uid="uid://dwx44w3wgh78n" path="res://assets_ai/processed/sprites/robot/robot2.png" id="4_57ysn"]
+[ext_resource type="Texture2D" uid="uid://bbi8xf767c7au" path="res://assets_ai/processed/sprites/robot/robot3.png" id="5_xvhu5"]
+[ext_resource type="Texture2D" uid="uid://o6px2d608yqv" path="res://assets_ai/processed/sprites/robot/robot4.png" id="6_o0m1m"]
+[ext_resource type="Texture2D" uid="uid://3mdh81vncw7x" path="res://assets_ai/processed/sprites/robot/robot5.png" id="7_6ehx0"]
+[ext_resource type="Texture2D" uid="uid://evciebl7wpjo" path="res://assets_ai/processed/sprites/robot/robot6.png" id="8_3bsfd"]
+[ext_resource type="Texture2D" uid="uid://b546gqg8eemht" path="res://assets_ai/processed/sprites/robot/robot7.png" id="9_g6fir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dbh2"]
 size = Vector2(43, 71)
@@ -19,58 +17,39 @@ size = Vector2(43, 71)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_57ysn")
+"texture": ExtResource("7_6ehx0")
 }],
 "loop": false,
-"name": &"fall_left",
+"name": &"fall",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_xvhu5")
-}],
-"loop": false,
-"name": &"fall_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_57ysn")
+"texture": ExtResource("3_j4giv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_o0m1m")
+"texture": ExtResource("4_57ysn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6ehx0")
+"texture": ExtResource("5_xvhu5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_3bsfd")
+"texture": ExtResource("6_o0m1m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_g6fir")
-}],
-"loop": true,
-"name": &"move_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_xvhu5")
+"texture": ExtResource("7_6ehx0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_qetxb")
+"texture": ExtResource("2_v5go6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_wgxg6")
+"texture": ExtResource("8_3bsfd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_2eva8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_mm433")
+"texture": ExtResource("9_g6fir")
 }],
 "loop": true,
-"name": &"move_right",
+"name": &"move",
 "speed": 5.0
 }]
 
@@ -83,5 +62,6 @@ position = Vector2(3.5, -2.5)
 shape = SubResource("RectangleShape2D_4dbh2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_oh4sx")
-animation = &"fall_right"
+animation = &"fall"

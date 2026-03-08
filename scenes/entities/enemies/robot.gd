@@ -17,9 +17,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall():
 		direction *= -1
 	
-	var dir_str: String = "right" if direction == 1 else "left"
+	anim.flip_h = (direction < 0)
 	
 	if not is_on_floor():
-		anim.play("fall_" + dir_str)
+		anim.play("fall")
 	else:
-		anim.play("move_" + dir_str)
+		anim.play("move")

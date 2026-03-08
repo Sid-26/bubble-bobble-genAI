@@ -1,6 +1,8 @@
 extends Area2D
 
 var can_be_collected := false
+@onready var pickup_sound: AudioStreamPlayer2D = $PickUpSound
+
 
 func _ready() -> void:
 	var tween = create_tween()
@@ -17,9 +19,16 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not can_be_collected:
 		return
-		
+	
+	
+	
 	if body.is_in_group("player"):
 		if body.has_method("apply_speed_boost"):
 			body.apply_speed_boost(1.5, 3.0)
 		GameManager.add_score(50) 
+		
+		$Sprite2D.visible = false
+		pickup_sound.play()
+		
+		await pickup_sound.finished
 		queue_free()

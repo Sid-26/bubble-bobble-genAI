@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://d3wcjlogpjugo"]
 
 [ext_resource type="Script" uid="uid://qfd4bsm4iko4" path="res://scenes/screens/menu.gd" id="1_1gb5i"]
-[ext_resource type="Texture2D" uid="uid://d0hto1jweg3kl" path="res://assets/sprites/title.png" id="1_r88xi"]
+[ext_resource type="Texture2D" uid="uid://dj1nho0w37kfu" path="res://assets_ai/processed/sprites/title.png" id="2_1gb5i"]
 [ext_resource type="Texture2D" uid="uid://dwl8f0crc7i56" path="res://assets/sprites/press_space/space0.png" id="2_d0hhf"]
 [ext_resource type="Texture2D" uid="uid://bk4wpj2wf078o" path="res://assets/sprites/press_space/space1.png" id="3_1gb5i"]
 [ext_resource type="Texture2D" uid="uid://c2ekw7tecat67" path="res://assets/sprites/press_space/space2.png" id="4_drf14"]
@@ -55,11 +55,12 @@ animations = [{
 script = ExtResource("1_1gb5i")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1151.0
-offset_bottom = 647.0
-texture = ExtResource("1_r88xi")
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_1gb5i")
+expand_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(592, 450)
+position = Vector2(568, 453)
 sprite_frames = SubResource("SpriteFrames_u4b30")
 frame_progress = 0.14726126

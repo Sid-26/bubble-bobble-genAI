@@ -9,16 +9,20 @@ var current_state: State = State.MOVING
 @export var travel_time := 1.0
 @export var life_time := 3.0
 
+
 var dir := 1
 var float_up := false
 var time_alive := 0.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var despawn_timer: Timer = $DespawnTimer
+@onready var blow_sound: AudioStreamPlayer2D = $BlowSound
+@onready var pop_sound: AudioStreamPlayer2D = $PopSound
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	anim.play("blow")
+	blow_sound.play()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,6 +56,7 @@ func _on_body_entered(body: Node2D) -> void:
 		current_state = State.TRAPPED
 	elif body.is_in_group("player") and current_state == State.TRAPPED:
 		GameManager.add_score(100)
+		pop_sound.play()
 		current_state = State.POPPED
 		
 		if fruit_scene and randf() > 0.5:

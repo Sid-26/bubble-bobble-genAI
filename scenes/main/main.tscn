@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb3ci2pchabfd"]
+[gd_scene load_steps=8 format=3 uid="uid://bb3ci2pchabfd"]
 
 [ext_resource type="PackedScene" uid="uid://c15u3a5u0tc6" path="res://scenes/world/Level01.tscn" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://gd8ueta6ulsg" path="res://scenes/entities/player/Player.tscn" id="2_iuonh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7qe7rctmx4lq" path="res://scenes/world/Spawner.tscn" id="4_l3cfh"]
 [ext_resource type="PackedScene" uid="uid://13b3bsjwqxyv" path="res://scenes/entities/enemies/robot.tscn" id="5_6q06x"]
 [ext_resource type="PackedScene" uid="uid://bxjem1376ffh6" path="res://scenes/world/HUD.tscn" id="6_ow5a4"]
+[ext_resource type="AudioStream" uid="uid://5173qk3l3ekj" path="res://assets_ai/processed/music/Neon_Jungle_Odyssey.mp3" id="7_hujxm"]
 
 [node name="Main" type="Node2D"]
 
@@ -29,3 +30,8 @@ spawn_rate = 4.0
 spawn_direction = -1
 
 [node name="Hud" parent="." instance=ExtResource("6_ow5a4")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hujxm")
+volume_db = -20.0
+autoplay = true

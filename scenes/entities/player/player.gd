@@ -13,6 +13,9 @@ var current_state: State = State.IDLE
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var iframe_timer: Timer = $HitTimer
 @onready var speed_timer: Timer = $SpeedTimer
+@onready var jump_sound: AudioStreamPlayer2D = $JumpSound
+@onready var run_sound: AudioStreamPlayer2D = $RunSound
+
 
 var facing := 1
 var is_invincible := false
@@ -38,6 +41,7 @@ func _physics_process(delta: float) -> void:
 func handle_movement() -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.y = jump_velocity
+		jump_sound.play()
 	
 	var direction := Input.get_axis("move_left", "move_right")
 	
@@ -46,12 +50,16 @@ func handle_movement() -> void:
 		facing = sign(direction)
 		current_state = State.RUN if is_on_floor() else State.JUMP 
 		
+		if is_on_floor() and not run_sound.playing:
+			run_sound.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed * speed_multiplier)
 		if is_on_floor():
 			current_state = State.IDLE
 		else:
 			current_state = State.JUMP
+	if current_state != State.RUN:
+		run_sound.stop()
 
 func fire_bubble() -> void:
 	current_state = State.FIRE
@@ -67,17 +75,23 @@ func fire_bubble() -> void:
 	get_parent().add_child(bubble)
 
 func update_animations() -> void:
-	var dir_str: String = "right" if facing == 1 else "left"
+	anim.flip_h = (facing < 0)
+	#var dir_str: String = "right" if facing == 1 else "left"
+	
+	if current_state == State.FIRE:
+		anim.flip_h = (facing > 0) 
+	else:
+		anim.flip_h = (facing < 0)
 	
 	match current_state:
 		State.IDLE:
 			anim.play("idle")
 		State.RUN:
-			anim.play("run_" + dir_str)
+			anim.play("run")
 		State.JUMP:
-			anim.play("jump_" + dir_str)
+			anim.play("jump")
 		State.FIRE:
-			anim.play("fire_" + dir_str)
+			anim.play("fire")
 			
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if current_state == State.FIRE:

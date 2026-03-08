@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://c15u3a5u0tc6"]
 
 [ext_resource type="PackedScene" uid="uid://b48vdmqxwiqhi" path="res://scenes/world/TileMap_Level01.tscn" id="1_hwsxj"]
-[ext_resource type="Texture2D" uid="uid://jepnsbyrmax5" path="res://assets/sprites/bg0.png" id="2_vlijf"]
+[ext_resource type="Texture2D" uid="uid://c0ybx3igcdunk" path="res://assets_ai/raw/sprites/bg.png" id="2_vlijf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlijf"]
 size = Vector2(70, 604)
@@ -25,6 +25,6 @@ shape = SubResource("RectangleShape2D_vlijf")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -5
-scale = Vector2(1.44, 1.35)
+scale = Vector2(0.4553006, 0.38207546)
 texture = ExtResource("2_vlijf")
 centered = false

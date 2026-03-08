@@ -1,19 +1,19 @@
 [gd_scene load_steps=18 format=3 uid="uid://gd8ueta6ulsg"]
 
 [ext_resource type="Script" uid="uid://dwqugn6sd2vsl" path="res://scenes/entities/player/player.gd" id="1_tlaso"]
-[ext_resource type="Texture2D" uid="uid://1v2gbko8du13" path="res://assets/sprites/player/fire_left/blow0.png" id="2_68iwh"]
-[ext_resource type="Texture2D" uid="uid://d3w5ldcamqyg5" path="res://assets/sprites/player/fire_right/blow1.png" id="3_ethid"]
-[ext_resource type="Texture2D" uid="uid://2bp4uhscvh0q" path="res://assets/sprites/player/idle/still.png" id="4_d3eos"]
-[ext_resource type="Texture2D" uid="uid://cpejpneht3rqm" path="res://assets/sprites/player/jump_left/jump0.png" id="5_plywm"]
-[ext_resource type="Texture2D" uid="uid://bl52o43cyyvur" path="res://assets/sprites/player/jump_right/jump1.png" id="6_ynxqy"]
-[ext_resource type="Texture2D" uid="uid://bqpxw6636bgtc" path="res://assets/sprites/player/run_left/run00.png" id="7_rwyx2"]
-[ext_resource type="Texture2D" uid="uid://cmx0h1xvdb8jq" path="res://assets/sprites/player/run_left/run01.png" id="8_uefl6"]
-[ext_resource type="Texture2D" uid="uid://df2ngb4h3ijpd" path="res://assets/sprites/player/run_left/run02.png" id="9_4o8ol"]
-[ext_resource type="Texture2D" uid="uid://57lrj8biribn" path="res://assets/sprites/player/run_left/run03.png" id="10_5x42c"]
-[ext_resource type="Texture2D" uid="uid://coyrvdboap7xi" path="res://assets/sprites/player/run_right/run10.png" id="11_n3xcv"]
-[ext_resource type="Texture2D" uid="uid://tceox3cc5px2" path="res://assets/sprites/player/run_right/run11.png" id="12_xhnkh"]
-[ext_resource type="Texture2D" uid="uid://bo5w6w5yy225q" path="res://assets/sprites/player/run_right/run12.png" id="13_01el4"]
-[ext_resource type="Texture2D" uid="uid://bhmi171s44ajr" path="res://assets/sprites/player/run_right/run13.png" id="14_4tvlw"]
+[ext_resource type="Texture2D" uid="uid://dn26puto64m4g" path="res://assets_ai/processed/sprites/player/fire/fire.png" id="2_68iwh"]
+[ext_resource type="Texture2D" uid="uid://dk68fngt17knl" path="res://assets_ai/processed/sprites/player/idle/idle.png" id="3_68iwh"]
+[ext_resource type="Texture2D" uid="uid://ckei0civ15lf7" path="res://assets_ai/processed/sprites/player/jump/jump.png" id="4_ethid"]
+[ext_resource type="Texture2D" uid="uid://ci5wprobt5rsw" path="res://assets_ai/processed/sprites/player/run/run0.png" id="5_ethid"]
+[ext_resource type="Texture2D" uid="uid://d1yjne01i7n12" path="res://assets_ai/processed/sprites/player/run/run1.png" id="6_d3eos"]
+[ext_resource type="Texture2D" uid="uid://bo0h0on35iug" path="res://assets_ai/processed/sprites/player/run/run2.png" id="7_plywm"]
+[ext_resource type="Texture2D" uid="uid://bb0a7ucoef7ql" path="res://assets_ai/processed/sprites/player/run/run3.png" id="8_ynxqy"]
+[ext_resource type="Texture2D" uid="uid://d0ppl4iooqg4f" path="res://assets_ai/processed/sprites/player/run/run4.png" id="9_rwyx2"]
+[ext_resource type="Texture2D" uid="uid://yr4kyaxjpbgf" path="res://assets_ai/processed/sprites/player/run/run5.png" id="10_uefl6"]
+[ext_resource type="Texture2D" uid="uid://42685rmpjpso" path="res://assets_ai/processed/sprites/player/run/run6.png" id="11_4o8ol"]
+[ext_resource type="Texture2D" uid="uid://cun8qvdk1d6dv" path="res://assets_ai/processed/sprites/player/run/run7.png" id="12_5x42c"]
+[ext_resource type="AudioStream" uid="uid://d1cf5jsfndxp6" path="res://assets_ai/processed/sfx/jump.wav" id="15_d3eos"]
+[ext_resource type="AudioStream" uid="uid://cy5rdwgsul2ao" path="res://assets_ai/processed/sfx/running.wav" id="16_plywm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sjmi1"]
 size = Vector2(64, 59)
@@ -25,20 +25,12 @@ animations = [{
 "texture": ExtResource("2_68iwh")
 }],
 "loop": false,
-"name": &"fire_left",
+"name": &"fire",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ethid")
-}],
-"loop": false,
-"name": &"fire_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_d3eos")
+"texture": ExtResource("3_68iwh")
 }],
 "loop": true,
 "name": &"idle",
@@ -46,52 +38,39 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_plywm")
+"texture": ExtResource("4_ethid")
 }],
 "loop": true,
-"name": &"jump_left",
+"name": &"jump",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_ynxqy")
+"texture": ExtResource("5_ethid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d3eos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_plywm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ynxqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rwyx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uefl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4o8ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5x42c")
 }],
 "loop": true,
-"name": &"jump_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_rwyx2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_uefl6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_4o8ol")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_5x42c")
-}],
-"loop": true,
-"name": &"run_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_n3xcv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_xhnkh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_01el4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_4tvlw")
-}],
-"loop": true,
-"name": &"run_right",
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -107,8 +86,10 @@ position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_sjmi1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.5, 3)
+scale = Vector2(0.3, 0.296)
 sprite_frames = SubResource("SpriteFrames_tlaso")
-animation = &"fire_right"
+animation = &"run"
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
@@ -123,6 +104,12 @@ wait_time = 2.0
 one_shot = true
 
 [node name="SpeedTimer" type="Timer" parent="."]
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_d3eos")
+
+[node name="RunSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_plywm")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
