@@ -1,0 +1,13 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bh4lls7lf5nqf"]
+
+[ext_resource type="Texture2D" uid="uid://dw5mr7nl6vveg" path="res://assets_ai/processed/tile.png" id="1_jlasc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aemoe"]
+texture = ExtResource("1_jlasc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_aemoe")
